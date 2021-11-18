@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML&CSS 実践</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>jissen</h1>
+            <nav>
+                <ul>
+                    <li><a href="#service">サービス</a></li>
+                    <li><a href="#news">ニュース</a></li>
+                    <li><a href="#price">価格</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+           </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="top">
+            <div class="top_wrap">
+                <h2>メンズ脱毛サロン</h2>
+            </div>
+        </section>
+
+        <section id="service">
+            <h2 class="section_title">サービス</h2>
+            <div class="service_wrap">
+                <div class="service_left">
+                    <img src="img/service.jpeg" alt="サービス画像">
+                </div>
+                <div class="service_right">
+                    <h3>新春割引キャンペーン</h3>
+                    <p>※ 以下の条件の全てを満たした場合に新春キャンペーンの適用となります。</p>
+                    <hr>
+                    <p>
+                        ✔︎　個人契約のお客様であること<br>
+                        ✔︎　３回以上通うことができる方<br>
+                        ✔︎　成人した男性の方
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2 class="section_title">ニュース</h2>
+            <div class="news_wrap">
+                <div class="news_text">
+                    <p>2021/1/1 新年のご挨拶</p>
+                    <p>2020/12/31　年末年始の店舗休業案内</p>
+                    <p>2020/8/23　お盆休みによる店舗の休業案内</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="price">
+            <h2 class="section_title">料金プラン</h2>
+            <div class="price_wrap">
+                <table>
+                    <tr>
+                        <th>ー</th>
+                        <th>プランA</th>
+                        <th>プランB</th>
+                    </tr>
+                    <tr>
+                        <td class="price_name">入会金</td>
+                        <td>10万円</td>
+                        <td>15万円</td>
+                    </tr>
+                    <tr>
+                        <td class="price_name">料金</td>
+                        <td>９００円/月</td>
+                        <td>１５００円/月</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section_title">お問い合わせ</h2>
+            <form class="form" method="post">
+                <div>
+                    <label for="name">氏名:</label>
+                    <input type="text" id="name" name="user_name" placeholder="例：山田　太郎">
+                </div>
+                <div>
+                    <label for="mail">メールアドレス:</label>
+                    <input type="email" id="mail" name="user_mail"　placeholder="例：hello@example.com">
+                </div>
+                <div>
+                    <label for="tel">電話番号:</label>
+                    <input type="tel" id="tel" name="user_tel" placeholder="例：123-4567-8901">
+                </div>
+                <div>
+                    <label for="msg">内容:</label>
+                    <textarea id="msg" name="user_message" placeholder="例：プランA"></textarea>
+                </div>
+                <div class="button_submit">
+                    <button class="button" type="submit">送信</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div>
+            <small>©︎ 2021 CODESTAR ALL rights reserved.</small>
+        </div>
+    </footer>
+</body>
+</html>
