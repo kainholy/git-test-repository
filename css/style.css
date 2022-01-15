@@ -59,18 +59,49 @@ nav ul li a:hover{
 
 
 /* MAIN */
-/*  */
+/* top */
+
 #top {
-    height: 700px;
-    background: url(../img/top.png) no-repeat center; 
-    background-size: cover;
+    height: 600px;
+    position: relative;
+    margin-bottom: 30px;
 }
 
-.top_wrap h2 {
-    font-size: 50px;
+.top_wrap h1 {
+    font-size: 60px;
     color: #fff;
+    padding: 25px 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 52%;
+    right: 5%;
+    z-index: 2;
     float: right;
-    margin: 275px;
+}
+
+.slideShow {
+    position: relative;
+    z-index: 1;
+}
+
+.slide_img1 {
+    background: url(../img/top.png);
+}
+
+.slide_img2 {
+    background: url(../img/top1.png);
+}
+
+.slide_img3 {
+    background: url(../img/top2.png);
+}
+
+.slide {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /*  */
@@ -218,4 +249,200 @@ textarea {
     padding: 50px;
     text-align: center;
     color: #fff;
+}
+
+
+.load-object,
+.load-object::before,
+.load-object::after {
+    width: 16px;
+    height: 84px;
+    background-color: #fff;
+    animation: loading 1s 8 ease-in-out; /* loadingアニメーション1秒を８回繰り返す */
+    -webkit-animation: loading 1s 8 ease-in-out;
+}
+
+.load-object {
+    margin: 0 auto;
+    color: #fff;
+    animation-delay: -0.2s; /* 0.2秒遅らせる */
+    -webkit-animation-delay: -0.2s;
+    position: relative;
+}
+
+.load-object::after,
+.load-object::before {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+
+.load-object::before {
+    animation-delay: -0.4s; /* 0.4秒遅らせる */
+    -webkit-animation-delay: -0.4s;
+    left: -24px;
+}
+
+.load-object::after {
+    left: 24px;
+}
+
+/* 物体の伸び縮みの動き */
+@-webkit-keyframes loading {
+    0%,
+    80%,
+    100% {
+        height: 64px;  /* 0%,80%,100で高さが64pxになる */
+        box-shadow: 0 0;
+    }
+    40% {
+        height: 80px; /* 40%で高さがしたに16px伸びる */
+        box-shadow: 0 -32px; /* 陰で上にも伸び縮みしているようにみせる */
+    }
+}
+
+@keyframes loading {
+    0%,
+    80%,
+    100% {
+        height: 64px;  /* 0%,80%,100で高さが64pxになる */
+        box-shadow: 0 0;
+    }
+    40% {
+        height: 80px; /* 40%で高さがしたに16px伸びる */
+        box-shadow: 0 -32px; /* 陰で上にも伸び縮みしているようにみせる */
+    }
+}
+
+/* 
+@keyframesとは？
+アニメーションの流れに沿ったキーフレーム（中間地点）のスタイルを定義することのよって、
+一連のCSSアニメーションの中間ステップを制御することができる
+*/
+
+/* 背景スタイル */
+#load-animation {
+    width: 100%;
+    height: 100%;
+    background: #0dc5c1;
+    align-items: center;
+    transition: all 0.3s;
+    display: flex;
+    position: fixed; /* 画面の位置を固定 */
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+
+/* スライドショーの矢印のスタイル */
+.slick_prev,
+.slick_next {
+    width: 25px;
+    height: 25px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+}
+
+/* 左向きの矢印スタイル */
+.slick_prev {
+    left: 2.5%;
+    transform: rotate(-135deg);
+}
+
+/* 右向きの矢印スタイル */
+.slick_next {
+    right: 2.5%;
+    transform: rotate(45deg);
+}
+
+.slick-dots {
+    margin: -80px 0 0 0;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.slick-dots button {
+    color: transparent;
+    background: #fff;
+    border-radius: 50%;
+    outline: none;
+    display: block;
+}
+
+.slick-dots .slick-active button {
+    background: #fff;
+}
+
+
+/* スクロールアニメーション */
+/* fadeUp */
+.fadeUp {
+    animation: fadeUpAnime 0.8s forwards; /* fadeUpAnimeを0.8秒で一回実行 */
+    opacity: 0;
+}
+  
+/* fadeLeft */
+.fadeLeft {
+    animation: fadeLeftAnime 0.8s forwards; /* fadeLeftAnimeを0.8秒で一回実行 */
+    opacity: 0;
+    overflow: hidden;
+}
+  
+/* fadeRight */
+.fadeRight {
+    animation: fadeRightAnime 0.8s forwards; /* fadeRightAnimeを0.8秒で一回実行 */
+    opacity: 0;
+    overflow: hidden;
+}
+  
+.fadeUpTrigger, .fadeLeftTrigger, .fadeRightTrigger {
+    opacity: 0; /* 初めは見えないようにしておく */
+}
+  
+@keyframes fadeUpAnime {
+    from {
+      opacity: 0; /* 初めは見えないようにしておく */
+      transform: translateY(100px); /* 100px下に動かしておく */
+    }
+  
+    to {
+      opacity: 1; /* 可視化する */
+      transform: translateY(0); /* 元の位置に戻す */
+    }
+}
+  
+@keyframes fadeLeftAnime {
+    from {
+      opacity: 0; /* 初めは見えないようにしておく */
+      transform: translateX(100px);/* 100px右に動かしておく */
+    }
+  
+    to {
+      opacity: 1; /* 可視化する */
+      transform: translateX(0); /* 元の位置に戻す */
+    }
+}
+  
+@keyframes fadeRightAnime {
+    from {
+      opacity: 0; /* 初めは見えないようにしておく */
+      transform: translateX(-100px);/* 100px左に動かしておく */
+    }
+  
+    to {
+      opacity: 1; /* 可視化する */
+      transform: translateX(0); /* 元の位置に戻す */
+    }
 }

@@ -6,12 +6,18 @@
     <title>HTML&CSS 実践</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 <body>
+
+    <div id="load-animation">
+        <div class="load-object"></div>
+    </div>
+
     <header>
-        <div class="header">
+        <div id="header" class="header">
             <h1>jissen</h1>
-            <nav>
+            <nav id="js-nav">
                 <ul>
                     <li><a href="#service">サービス</a></li>
                     <li><a href="#news">ニュース</a></li>
@@ -26,17 +32,22 @@
 
         <section id="top">
             <div class="top_wrap">
-                <h2>メンズ脱毛サロン</h2>
+                <ul class="slideShow">
+                    <li class="slide slide_img1"></li>
+                    <li class="slide slide_img2"></li>
+                    <li class="slide slide_img3"></li>
+                </ul>
+                <h1>メンズ脱毛サロン</h1>
             </div>
         </section>
 
         <section id="service">
             <h2 class="section_title">サービス</h2>
             <div class="service_wrap">
-                <div class="service_left">
+                <div class="service_left fadeRightTrigger">
                     <img src="img/service.jpeg" alt="サービス画像">
                 </div>
-                <div class="service_right">
+                <div class="service_right fadeLeftTrigger">
                     <h3>新春割引キャンペーン</h3>
                     <p>※ 以下の条件の全てを満たした場合に新春キャンペーンの適用となります。</p>
                     <hr>
@@ -62,7 +73,7 @@
 
         <section id="price">
             <h2 class="section_title">料金プラン</h2>
-            <div class="price_wrap">
+            <div class="price_wrap fadeUpTrigger">
                 <table>
                     <tr>
                         <th>ー</th>
@@ -114,5 +125,11 @@
             <small>©︎ 2021 CODESTAR ALL rights reserved.</small>
         </div>
     </footer>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
